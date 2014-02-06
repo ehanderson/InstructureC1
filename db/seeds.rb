@@ -1,14 +1,6 @@
-# Student.create(name: "Emily")
-# Student.create(name: "Wes")
-# Student.create(name: "Dain")
-# Student.create(name: "John")
-# Student.create(name: "Betsy")
 
-# Assignment.create(name: "math")
-# Assignment.create(name: "writing")
-# Assignment.create(name: "reading")
-
-
+100.times{Student.create(name: Faker::Name.name)}
+10.times{Assignment.create(name: Faker::Company.bs)}
 kids = Student.all
 assignments = Assignment.all
 kids.each do |kid|
