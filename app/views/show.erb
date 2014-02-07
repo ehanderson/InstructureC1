@@ -5,12 +5,10 @@
       <th><%=assign.name%></th>
     <%end%>
   </tr></thead>
-
   <tbody>
     <%@students.each do |student|%>
     <tr>
     <td><%=student.name%></td>
-
       <%student.assignments.each do |assign|%>
         <td><%=student.submissions.find {|s| s.assignment_id == assign.id}.try(:grade)%></td>
       <%end%>
