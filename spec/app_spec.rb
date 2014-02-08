@@ -1,10 +1,10 @@
 require File.expand_path '../spec_helper.rb', __FILE__
 
-# describe IndexController do
-#   it "should return a student's grade per assignment" do
+describe "index.rb get '/show'" do
+  it "should return a student's grade per assignment" do
 
-#   end
-# end
+  end
+end
 
 
 # Student.first.assignments.first.name == "leverage innovative convergence"

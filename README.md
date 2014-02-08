@@ -27,5 +27,9 @@ Tests are currently being created to confirm accuracy so until they are launched
 
 The development environment is currently set up for this app.
 
+#### Future Features Coming Soon:
+
+- RSpec Tests
+- Validations for seed data
 
 
