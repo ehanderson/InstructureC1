@@ -8,12 +8,12 @@
 
   <tbody>
     <%@students.each do |student|%>
-    <tr>
-    <td><%=student.name%></td>
-      <%student.assignments.each do |assign|%>
-        <td><%=student.submissions.find {|s| s.assignment_id == assign.id}.try(:grade)%></td>
-      <%end%>
-    </tr>
+      <tr>
+      <td><%=student.name%></td>
+        <%student.assignments.each do |assign|%>
+          <td><%=student.submissions.find {|s| s.assignment_id == assign.id}.try(:grade)%></td>
+        <%end%>
+      </tr>
     <%end%>
 </tbody>
 </table>

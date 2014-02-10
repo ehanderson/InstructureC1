@@ -11,8 +11,7 @@ get '/show' do
   Benchmark.bm do |bm|
     bm.report do
       @assignments = Assignment.all
-      @students = Student.includes(:submissions, :assignments)
-      "The current time is #{Time.now}"
+      @students = Student.includes(:assignments)
     end
   end
   #this prevents the view from making any calls to the database
@@ -23,3 +22,5 @@ end
   # this requires a find_by which took too much time. This route makes
   # more sense to get the same data
 
+# I initially would have thought that indexing would optimize
+# this; however, with the way the models are set up it wouldn't make sense.
