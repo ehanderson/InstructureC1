@@ -8,10 +8,15 @@ get '/' do
 end
 
 get '/show' do
-@assignments = Assignment.all
-@students = Student.includes(:submissions, :assignments)
+  Benchmark.bm do |bm|
+    bm.report do
+      @assignments = Assignment.all
+      @students = Student.includes(:submissions, :assignments)
+      "The current time is #{Time.now}"
+    end
+  end
   #this prevents the view from making any calls to the database
-erb :show
+  erb :show
 end
 
   # previously I was going from assignment to students to submissions,
